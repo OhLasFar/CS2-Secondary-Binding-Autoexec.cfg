@@ -1,3 +1,3 @@
 # CS2-Secondary-Binding-Autoexec.cfg
 
-This is the beginning of something great for CS2 autoexec.cfg users! :)
+This is the beginning of something great for CS2 autoexec.cfg users! :) Yes yes yes !
