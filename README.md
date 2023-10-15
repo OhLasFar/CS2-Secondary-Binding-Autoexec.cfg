@@ -1,1 +1,1 @@
-# CS2-Default-Binding-Autoexec.cfg
+# CS2-Secondary-Binding-Autoexec.cfg
