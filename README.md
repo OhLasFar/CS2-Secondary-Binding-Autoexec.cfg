@@ -1,50 +1,88 @@
-*Not final guide*
 
-> This guide is for enhancing your Counter-Strike 2 gameplay with better secondary commands made by **OhLasFar on Twitter**.
+# Introduction
+This guide is an auto-exec that includes ALL of the default bindings, including the possibility of having secondary bindings.
+It is important to follow along, as one mistake could ruin the entire configuration.
+Any modifications to the file are possible, and I've tried to explain them as best as I can so you don't get lost during the process.
+Please consider giving it a star, and a follow on Twitter @OhLasFar would be greatly appreciated.
 
-# Step 1: DEFINE YOUR DEFAULT COMMANDS
+In this guide you will find 5 steps, theses steps are also writen and easily foundable in the autoexec.cfg file.
 
-1. Navigate to the **'Part 1'** section of the autoexec.cfg.
-2. Bind all the keybinds you typically use.
+# STEP 1 : SET DEFAULT BINDINGS
 
-While most lines don't start with the word `alias`, it's possible to delete them, but not recommended.
-Lines in 'Part 1' starting with `alias` are essential for secondary commands. It's recommended to name them for easy identification. 
-Example: ```alias MeleeWeapon "bind 1 slot3"```
-- "MeleeWeapon" is the name of the alias
-- "bind 1 slot3" is the full command of the binding
+You will have to bind all of your keys that you usually use and make sure to bind them correctly with the correct key.
 
-> If you are unsure about available commands, refer to: ```C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\user_keys_default.vcfg``` In the file you will find the number or the letter to the left then the action command to the right. 
-
-
-# Step 2: SET ALIAS COMMANDS
-
-1. Name all aliases meaningfully and assign a specific command to each.
-
-2. There's a limit on the number of default commands, find them at:
-C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\user_keys_default.vcfg
+| Command       | Key           | Action        | Comment (Not necessary) |
+| ------------- | ------------- | ------------- | ----------------------- |
+| bind          | g             | drop          | // Drop Weapon          |
+| bind          | f             | +lookatweapon | // Inspect Weapon       |
 
 
-# Step 3: NAME YOUR ALIASES & SET CORRESPONDING KEYBINDS
+So in your autoexec.cfg you would get something like this ;
+```
+bind g drop							// Drop Weapon
+bind f +lookatweapon						// Inspect Weapon
+```
+⚠️ Please note that keybinding letters must ALWAYS be set in lowercase.
 
-1. Give unique names to your aliases. Avoid duplicate names to prevent issues.
+# STEP 2 : ALIASES CREATION AND THEIR PURPOSE
 
- > ⚠️ **Attention**: NEVER use identical alias names.
+In step two, you will need to create new values for your future secondary keybinds actions. It's important to know that your aliases name must be DIFFERENT so for example, you cannot use MolotovSlot two times in two different part BUT step 4.
 
-2. There are default keybinds like 1, 2, 3, and 4. Modify them as per your preferences, ensuring they match with the `alias` lines in 'Part 1'.
+| Macro   | Alias Name       | Action       |
+| ------- | ---------------- | ------------ |
+| alias   | MolotovSlot      | slot10       |
+| alias   | FlashbangSlot    | slot7        |
+| alias   | HEGrenadeSlot    | slot4        |
+| alias   | SmokeGrenadeSlot | slot8        |
 
-# Step 4: MODIFY ALIASES FOR SECONDARY COMMANDS
+If you are unsure of wich action you can use, you can find all the available action that you can use in C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\user_keys_default.vcfg
+Be careful the action will always equal to the binding next to it even if you do the command unbindall. Actions can be found to the right.
+```
+"config"
+{
+	"bindings"
+	{
+...
+		"8" 			"slot8"
+		"9" 			"slot9"
+		"a" 			"+left"
+		"b" 			"buymenu"
+		"c" 			"+radialradio"
+...
+	}
+}
+```
 
-1. Start with **'Part 1'**:
-- Add new aliases with `-secondarycommand`.
-- Remove unnecessary ones.
-- Modify existing aliases if needed.
+# STEP 3 : SET SECONDARY KEY BINDINGS
 
-2. Proceed to **'Part 3'** and:
-- Add new aliases with `+secondarycommand`.
-- Remove or adjust any that don't fit your setup.
+In step 3 you will have to create your aliases name and tell them what they bind to. So for example, the alias name binds to the full console command "bind 1 MolotovSlot". 
 
-# Step 5: SETTING THE TOGGLE KEYBIND FOR SECONDARY COMMANDS
+Please note that for the full console command this symbol " is needed in order to work properly.
+| Macro   | Alias Name          | Full Console Command      |
+| ------- | ------------------- | ------------------------- |
+| alias   | MolotovSecond       | "bind 1 MolotovSlot"      |
+| alias   | FlashbangSecond     | "bind 4 FlashbangSlot"    |
+| alias   | HEGrenadeSecond     | "bind 3 HEGrenadeSlot"    |
+| alias   | SmokeGrenadeSecond  | "bind 2 SmokeGrenadeSlot" |
 
-1. Decide on a key to toggle your secondary keybinds.
-2. Bind this key to switch between primary and secondary commands. This key helps to seamlessly shift between command sets.
+Step 3 is for when you press on the key that you will bind in part 5, it will basically bind theses new keybinds to your keys. Alternatively, it would also be possible to use for example "MolotovSecond" in the console and it would execute "bind 1 MolotovSlot"
 
+# STEP 4 : TOGGLE LOGIC
+
+In step 4, this is the toggle logic for activating your Seconday bindings and the auto deactivation when the button is released.
+
+In the alias +secondarycommand, it is important to add or remove ANY aliases that you have set in Part 3. After every aliases you must always add a ";" but NOT for the last alias.
+In the alias -secondarycommand, it is important to add or remove ANY aliases that you have set in Part 1 as this will allow you to get back your main keybinds after releasing the button that will be set in Part 5.
+| Macro   | Alias Name          | Full Console Command                                                   |
+| ------- | ------------------- | ---------------------------------------------------------------------- |
+| alias   | +secondarycommand   | "MolotovSecond; FlashbangSecond; HEGrenadeSecond; SmokeGrenadeSecond"  |
+| alias   | -secondarycommand   | "PrimaryWeapon; SecondaryWeapon; MeleeWeapon; CycleGrenades"           |
+
+# STEP 5 : SECONDARY KEYBINDS TOGGLE
+
+In step 5, this is the final step. You will need to bind your wanted key and you will be able to toggle your secondary keybinds.
+When pressing down your key, this will activate +secondarycommand and upon release, it will then activate -secondarycommand
+
+| Command       | Key           | Action            |
+| ------------- | ------------- | ----------------- |
+| bind          | mouse5        | +secondarycommand |
