@@ -1,33 +1,48 @@
 
 # Introduction
-This guide is an auto-exec that includes ALL of the default bindings, including the possibility of having secondary bindings.
-It is important to follow along, as one mistake could ruin the entire configuration.
-Any modifications to the file are possible, and I've tried to explain them as best as I can so you don't get lost during the process.
-Please consider giving it a star, and a follow on Twitter @OhLasFar would be greatly appreciated.
 
-In this guide you will find 5 steps, theses steps are also writen and easily foundable in the autoexec.cfg file.
+Welcome to this guide! It covers how to set up your new auto-exec with ALL default bindings and even add secondary ones. Follow closely! A small mistake could mess things up. But don't worry; I've explained each step clearly. If you find this guide helpful, please give it a star. And hey, a follow on Twitter @OhLasFar would make my day!
 
-# STEP 1 : SET DEFAULT BINDINGS
+The guide is divided into 5 easy-to-follow steps. You can find these steps labeled in the `autoexec.cfg` file too.
 
-You will have to bind all of your keys that you usually use and make sure to bind them correctly with the correct key.
+# Step 1: Setting Default Key Bindings
 
+Set up your primary key bindings using the following alias commands. These commands ensure you can quickly revert to your original bindings after using the secondary keybinds and are crucial for the secondary bindings to function as expected.
+```
+alias PrimaryWeapon "bind 2 slot1"       // Primary Weapon 
+alias SecondaryWeapon "bind 3 slot2"     // Secondary Weapon 
+alias MeleeWeapon "bind 1 slot3"         // Melee Weapon 
+alias CycleGrenades "bind 4 slot4"       // Cycle Grenades 
+```
+
+If you decide to change or remove an alias, like `PrimaryWeapon`, you can directly use `bind 2 slot1` instead of `alias PrimaryWeapon "bind 2 slot1"`. It'll function normally. However, if you adjust or remove the alias here, ensure to also modify it in Step 4.
+
+After setting these aliases, bind the keys you use regularly. Ensure each key is matched to its intended action.
+
+For example:
 | Command       | Key           | Action        | Comment (Not necessary) |
 | ------------- | ------------- | ------------- | ----------------------- |
 | bind          | g             | drop          | // Drop Weapon          |
 | bind          | f             | +lookatweapon | // Inspect Weapon       |
 
 
-So in your autoexec.cfg you would get something like this ;
+In `autoexec.cfg`, it should look like:
 ```
-bind g drop							// Drop Weapon
-bind f +lookatweapon						// Inspect Weapon
+...
+alias PrimaryWeapon "bind 2 slot1"      // Primary Weapon 
+alias SecondaryWeapon "bind 3 slot2"    // Secondary Weapon 
+...
+bind g drop				// Drop Weapon
+bind f +lookatweapon			// Inspect Weapon
+...
 ```
-⚠️ Please note that keybinding letters must ALWAYS be set in lowercase.
+⚠️ Remember: always use lowercase for keybinding letters.
 
-# STEP 2 : ALIASES CREATION AND THEIR PURPOSE
+# Step 2: Creating Aliases for Secondary Keybinds
 
-In step two, you will need to create new values for your future secondary keybinds actions. It's important to know that your aliases name must be DIFFERENT so for example, you cannot use MolotovSlot two times in two different part BUT step 4.
+Create aliases for your secondary keybind actions. __Make sure each alias name is unique!__
 
+For instance:
 | Macro   | Alias Name       | Action       |
 | ------- | ---------------- | ------------ |
 | alias   | MolotovSlot      | slot10       |
@@ -35,29 +50,17 @@ In step two, you will need to create new values for your future secondary keybin
 | alias   | HEGrenadeSlot    | slot4        |
 | alias   | SmokeGrenadeSlot | slot8        |
 
-If you are unsure of wich action you can use, you can find all the available action that you can use in C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\user_keys_default.vcfg
-Be careful the action will always equal to the binding next to it even if you do the command unbindall. Actions can be found to the right.
-```
-"config"
-{
-	"bindings"
-	{
-...
-		"8" 			"slot8"
-		"9" 			"slot9"
-		"a" 			"+left"
-		"b" 			"buymenu"
-		"c" 			"+radialradio"
-...
-	}
-}
-```
+Not sure about available actions? Check out the file at:
+`C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\user_keys_default.vcfg`
 
-# STEP 3 : SET SECONDARY KEY BINDINGS
+💡 Actions can be found to the right in this file and be careful the action will always equal to the binding next to it even if you do the command unbindall. 
 
-In step 3 you will have to create your aliases name and tell them what they bind to. So for example, the alias name binds to the full console command "bind 1 MolotovSlot". 
 
-Please note that for the full console command this symbol " is needed in order to work properly.
+# Step 3: Setting Up Secondary Key Bindings
+
+Assign actions to your aliases. For instance, the alias "`MolotovSecond`" links to the command "`bind 1 MolotovSlot`".
+
+Note: Always use quotation marks (" ") for full console commands.
 | Macro   | Alias Name          | Full Console Command      |
 | ------- | ------------------- | ------------------------- |
 | alias   | MolotovSecond       | "bind 1 MolotovSlot"      |
@@ -65,24 +68,41 @@ Please note that for the full console command this symbol " is needed in order t
 | alias   | HEGrenadeSecond     | "bind 3 HEGrenadeSlot"    |
 | alias   | SmokeGrenadeSecond  | "bind 2 SmokeGrenadeSlot" |
 
-Step 3 is for when you press on the key that you will bind in part 5, it will basically bind theses new keybinds to your keys. Alternatively, it would also be possible to use for example "MolotovSecond" in the console and it would execute "bind 1 MolotovSlot"
+This step ensures that when you press your binded key (defined in Step 5), it will reassign new functions to your keys.
 
-# STEP 4 : TOGGLE LOGIC
+# Step 4: Toggle Logic
 
-In step 4, this is the toggle logic for activating your Seconday bindings and the auto deactivation when the button is released.
+This step covers the logic to switch between primary and secondary keybinds.
 
-In the alias +secondarycommand, it is important to add or remove ANY aliases that you have set in Part 3. After every aliases you must always add a ";" but NOT for the last alias.
-In the alias -secondarycommand, it is important to add or remove ANY aliases that you have set in Part 1 as this will allow you to get back your main keybinds after releasing the button that will be set in Part 5.
+For activation:
 | Macro   | Alias Name          | Full Console Command                                                   |
 | ------- | ------------------- | ---------------------------------------------------------------------- |
 | alias   | +secondarycommand   | "MolotovSecond; FlashbangSecond; HEGrenadeSecond; SmokeGrenadeSecond"  |
+
+For deactivation:
+| Macro   | Alias Name          | Full Console Command                                                   |
+| ------- | ------------------- | ---------------------------------------------------------------------- |
 | alias   | -secondarycommand   | "PrimaryWeapon; SecondaryWeapon; MeleeWeapon; CycleGrenades"           |
 
-# STEP 5 : SECONDARY KEYBINDS TOGGLE
+💡 Always separate commands with a semicolon (;) but skip it for the last command.
+Note: When using the PrimaryWeapon alias (or any other alias), it's equivalent to manually entering the command "bind 2 slot1" in the game console.
 
-In step 5, this is the final step. You will need to bind your wanted key and you will be able to toggle your secondary keybinds.
-When pressing down your key, this will activate +secondarycommand and upon release, it will then activate -secondarycommand
+# Step 5: Toggle Secondary Keybinds
+
+Lastly, bind a key to toggle between the primary and secondary commands.
 
 | Command       | Key           | Action            |
 | ------------- | ------------- | ----------------- |
 | bind          | mouse5        | +secondarycommand |
+
+Pressing this key activates your secondary keybinds, and releasing it goes back to primary ones.
+
+# 🌟 Thanks for Making It This Far! 🌟
+
+I truly appreciate you taking the time to read through this documentation. If you found it helpful, please consider leaving a ⭐ star. It means a lot!
+
+🌐 For more updates and cool stuff, don't hesitate to [follow me on my socials](https://linktr.ee/LasFar).
+
+🎁 Feeling generous? Fancy sending over a gift? You can [trade with me on Steam](https://steamcommunity.com/tradeoffer/new/?partner=325412381&token=RI4Jz8Ya) or if you'd like to [buy me a coffee](https://botrix.live/y/@lasfar/tip), I'll give you a special shoutout on my next stream. Every bit helps, and I'm grateful for your support!
+
+Stay awesome and stay safe! ❤️
