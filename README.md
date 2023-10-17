@@ -108,3 +108,21 @@ I truly appreciate you taking the time to read through this documentation. If yo
 🎁 Feeling generous? You can [trade with me on Steam](https://steamcommunity.com/tradeoffer/new/?partner=325412381&token=RI4Jz8Ya) or if you'd like to [buy me a coffee](https://botrix.live/y/@lasfar/tip), I'll give you a special shoutout on my next stream. Every bit helps, and I'm grateful for your support!
 
 Stay awesome and stay safe! ❤️
+
+# Frequently Asked Questions (FAQ)
+
+## Q: I'm not sure I understand the purpose of this. You want to be able to pull your knife with 1, but also pull a molotov if you hold some key and then press 1?
+
+### A:
+That's correct! It's for better and easy access to your utilities or any other actions and/or custom bindings so you can access them more efficiently. While the default is set to 1,2,3, or 4, you're free to bind them to any other key like "g" or another letter.
+
+## Q: Why not just bind utilities to different keys?
+
+### A:
+This really boils down to personal preference. For some, including me, accidentally pressing utilities bound to adjacent keys can be frustrating. The primary goal is to avoid cycling through an entire stack of grenades to get to the one you need. With this setup, you can use the 1,2,3, & 4 keys or any key of your preference. Plus, while the setup comes with only four secondary keybinds by default, you can add as many as you want. This is also beneficial for players using one-handed keyboards.
+
+## Q: Can I use custom bindings with this configuration? For example, can I bind a custom jumpthrow to the secondary bindings?
+
+### A:
+Absolutely! The setup is designed to be versatile. Besides the preset functions, you can incorporate custom bindings, such as a specific jumpthrow or any other custom command, to the secondary bindings. This offers flexibility for unique gameplay styles and preferences.
+
