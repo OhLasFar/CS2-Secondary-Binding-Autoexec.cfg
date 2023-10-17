@@ -1,7 +1,7 @@
 
 # Introduction
 
-Welcome to this guide! It covers how to set up your new auto-exec with ALL default bindings and even add secondary ones. Follow closely! A small mistake could mess things up. But don't worry; I've explained each step clearly. If you find this guide helpful, please give it a star. And hey, a follow on Twitter @OhLasFar would make my day!
+Welcome to this guide! It covers how to set up your new autoexec with ALL default bindings and even add secondary ones. Follow closely! A small mistake could mess things up. But don't worry; I've explained each step clearly. If you find this guide helpful, please give it a star. And hey, a follow on Twitter @OhLasFar would make my day!
 
 The guide is divided into 5 easy-to-follow steps. You can find these steps labeled in the `autoexec.cfg` file too.
 
