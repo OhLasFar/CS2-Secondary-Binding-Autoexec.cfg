@@ -105,6 +105,6 @@ I truly appreciate you taking the time to read through this documentation. If yo
 
 🌐 For more updates and cool stuff, don't hesitate to [follow me on my socials](https://linktr.ee/LasFar).
 
-🎁 Feeling generous? Fancy sending over a gift? You can [trade with me on Steam](https://steamcommunity.com/tradeoffer/new/?partner=325412381&token=RI4Jz8Ya) or if you'd like to [buy me a coffee](https://botrix.live/y/@lasfar/tip), I'll give you a special shoutout on my next stream. Every bit helps, and I'm grateful for your support!
+🎁 Feeling generous? You can [trade with me on Steam](https://steamcommunity.com/tradeoffer/new/?partner=325412381&token=RI4Jz8Ya) or if you'd like to [buy me a coffee](https://botrix.live/y/@lasfar/tip), I'll give you a special shoutout on my next stream. Every bit helps, and I'm grateful for your support!
 
 Stay awesome and stay safe! ❤️
