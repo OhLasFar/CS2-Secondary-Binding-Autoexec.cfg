@@ -55,7 +55,7 @@ For instance:
 Not sure about available actions? Check out the file at:
 `C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\user_keys_default.vcfg`
 
-💡 Actions can be found to the right in this file and be careful the action will always equal to the binding next to it even if you do the command unbindall. 
+💡 Actions can be found to the right in this file and be careful the action will always equal to the binding next to it even if you do the command `unbindall`. 
 
 
 # Step 3: Setting Up Secondary Key Bindings
