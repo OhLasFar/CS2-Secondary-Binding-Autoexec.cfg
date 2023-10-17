@@ -5,6 +5,8 @@ Welcome to this guide! It covers how to set up your new auto-exec with ALL defau
 
 The guide is divided into 5 easy-to-follow steps. You can find these steps labeled in the `autoexec.cfg` file too.
 
+Additionally, it's crucial to integrate or merge your `autoexec.cfg` into the specified path: `C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\`.
+
 # Step 1: Setting Default Key Bindings
 
 Set up your primary key bindings using the following alias commands. These commands ensure you can quickly revert to your original bindings after using the secondary keybinds and are crucial for the secondary bindings to function as expected.
